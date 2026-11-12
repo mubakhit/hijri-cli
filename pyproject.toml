@@ -1,0 +1,13 @@
+[project]
+name = "hijri-CLI"
+version = "0.1.0"
+ 
+[project.scripts]
+hijri = "cli:main"
+ 
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["cli", "hijra", "hijra_uq"]
