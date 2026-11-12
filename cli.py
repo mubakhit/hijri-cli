@@ -16,10 +16,13 @@ def main():
 
     if args.date == None:
         target = datetime.datetime.now() # Example: 2026-11-13 01:49:45
-        time_text = target.strftime("%X") #T ime Now in HH:mm:ss
+        time_text = target.strftime("%X") # Time Now in HH:mm:ss
     else:
-        target = datetime.date.fromisoformat(args.date)
-        time_text = ""
+        try:
+            target = datetime.date.fromisoformat(args.date)
+            time_text = ""
+        except ValueError:
+            parser.error("Invalid date format. Please use YYYY-MM-DD.")
 
     weekday = target.strftime("%A") # Example Friday
     h_year,h_month,h_day = hijra.gregorian_to_hijri(target.year,target.month,target.day)
