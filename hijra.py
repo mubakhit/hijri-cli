@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
+Copyright (c) 2006-2008 Muayyad Saleh Alsadi<alsadi@gmail.com>
+Copyright (c) 2026 Muhammad Bakhit https://github.com/mubakhit
+  Umm al-Qura table support, Python 3 integer-division fixes, date validation
+
 Hijri Islamic Calendar converting functions,
 Copyright (c) 2006-2008 Muayyad Saleh Alsadi<alsadi@gmail.com>
 Based on an enhanced algorithm designed by me
@@ -113,16 +117,6 @@ def hijri_days_before_month(Y,M):
       McM+=__p_const
    return sum
 
-#TEST: PASSED
-# test that the faster hijri_days_before_month is ok
-#def test_hijri_days_before_month():
-#  l=[(y,m) for y in xrange(1400,1499) for m in xrange(1,13)]
-#  for y,m in l:
-#    d1=hijri_days_before_month(y,m)
-#    d2=hijri_days_before_month_(y,m)
-#    if d1!=d2: print y,m,d1,d2
-
-
 def hijri_year_days(Y):
    """Return the number of days in a given year Y"""
    return hijri_days_before_month(Y,13)
@@ -130,16 +124,6 @@ def hijri_year_days(Y):
 def hijri_day_number (Y, M, D):
    """Return the day number within the year of the Islamic date (Y, M, D), 1 for 1/1 in any year"""
    return hijri_days_before_month(Y,M)+D
-
-
-# BAD fast implementation
-#def hijri_to_absolute_ (Y, M, D):
-#   """Return absolute date of Hijri (Y,M,D), eg. ramadan (9),1,1427 -> 732578 """   
-#   Mc=(Y-1)*12
-#   # days before Hijra +  days in the years before + days from the begining of that year
-#   return __hijri_epoch + \
-#      Mc*29 + Mc*__p_const/__q_const + \ # this line should involve __a_const
-#      hijri_day_number (Y, M, D) - 1
 
 # correct implementation # TODO: optimize it more and test that after optimization
 def hijri_to_absolute (Y, M, D):
