@@ -297,25 +297,7 @@ Gregorian date Sunday, December 31, 1 BC."""
 def gregorian_day_of_week (yy, mm, dd):
    """Return the day-of-the-week index of gregorian (yy, mm, dd) DATE, 0 for Sunday, 1 for Monday, etc."""
    return gregorian_to_absolute (yy,mm, dd) % 7;
-# ///////////////////////////////
-# some tests for debuging to be removed
 
-def test1():
-  global __a_const;
-  __a_const=48
-  for __a_const in range(0,100): unmatched=0; from_y=1; to_y=4001
-  for y in range(from_y,to_y):
-    if hijri_days(y)!=emacs_hijri_days(y): unmatched+=1
-  print("%d years (%g %%) unmatched when a=%d" % (unmatched, float(float(unmatched)/(to_y-from_y)), __a_const))
-  __a_const=48
-  sum=0.0
-  for y in range(1,4001): sum+=hijri_days(y)
-  print("year len=%f " % float(float(sum)/4000.0*100.0))
-  __a_const=47
-  sum=0.0
-  for y in range(1,4001): sum+=hijri_days(y)
-  print("year len=%f " % float(float(sum)/4000.0*100.0))
-##########################
 if __name__ == "__main__":
    # conclusion
    # 0% for a=16 48 65
