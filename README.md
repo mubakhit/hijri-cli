@@ -59,7 +59,7 @@ Mohammed Alshehri.
 
 ## License
 
-Released under the Waqf Public License. See `Waqf-LICENSE.txt`.
+Released under the Waqf Public License. See `LICENSE.txt`.
 
 The Umm al-Qura table data is under the MIT License.
-See `LICENSE-hijridate.txt`.
+See `hijridate-LICENSE.txt`.

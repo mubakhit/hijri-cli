@@ -20,10 +20,10 @@ that works like the "date" command.
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-    A copy of the license is included in this repository (Waqf-LICENSE-en.txt).
+    A copy of the license is included in this repository (LICENSE.txt).
 
 Umm al-Qura table data (hijra_uq.py) is taken from the "hijridate" project
-by Mohammed Alshehri, under the MIT License (see LICENSE-hijridate.txt).
+by Mohammed Alshehri, under the MIT License (see hijridate-LICENSE.txt).
 """
 
 import datetime
